@@ -7,7 +7,7 @@ export const TodosProvider = ({ children }) => {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/api/todos").then((response) => {
+    axios.get("http://localhost:3000/todos").then((response) => {
       console.log(response.data);
       const diff = todos.filter((item) => item.id === undefined);
       console.log(diff);
@@ -22,7 +22,7 @@ export const TodosProvider = ({ children }) => {
       alert("Content should at least be 6 characters long");
     } else {
       axios
-        .post("http://localhost:3001/api/todos", {
+        .post("http://localhost:3000/todos", {
           ...todo,
         })
         .then(() => {
@@ -33,7 +33,7 @@ export const TodosProvider = ({ children }) => {
   };
 
   const deleteTodo = (id) => {
-    axios.delete(`http://localhost:3001/api/todos/${id}`).then(() => {
+    axios.delete(`http://localhost:3000/todos/${id}`).then(() => {
       console.log("todo deleted");
       setTodos(todos.filter((item) => item.id !== id));
     });
