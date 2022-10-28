@@ -7,7 +7,7 @@ function TodoItem({ todo }) {
   const { deleteTodo } = useContext(TodosContext);
   return (
     <div className={styles.todoItem}>
-      <p>{todo.title}</p>
+      <p className={styles.todoTitle}>{todo.title}</p>
       <BsFillTrashFill
         className={styles.deleteIcon}
         onClick={() => deleteTodo(todo.id)}

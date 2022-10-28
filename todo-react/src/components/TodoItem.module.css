@@ -1,5 +1,5 @@
 .todoItem {
-  width: 80%;
+  width: 100%;
   font-size: 16px;
   font-weight: 500;
   border-radius: 12px;
@@ -8,6 +8,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.todoTitle {
+  width: 85%;
+  word-wrap: break-word;
 }
 .deleteIcon {
   font-size: 18px;
